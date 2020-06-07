@@ -1,9 +1,7 @@
-import { randomDate } from "./randomDate";
-
 export const voteObject = ({ candidate, voter }) => {
 	return {
 		candidate,
-		datetime: randomDate(),
+		datetime: (new Date()).toISOString(),
 		voter,
 	};
 };
