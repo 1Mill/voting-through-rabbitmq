@@ -11,7 +11,7 @@ export default {
 	data() {
 		return {
 			CANIDATES,
-			votes: [...new Array(12)].map((_, index) => {
+			votes: [...new Array(13)].map((_, index) => {
 				return voteObject({
 					candidate: CANIDATES[index % CANIDATES.length],
 					voter: `Voter ${index}`,
