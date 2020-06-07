@@ -16,4 +16,4 @@ ENV \
 
 EXPOSE ${PORT}
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "build", "&&", "npm", "run", "start" ]
