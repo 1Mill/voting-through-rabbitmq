@@ -19,6 +19,13 @@ export default {
 			})
 		}
 	},
+	methods: {
+		percentageOfVoteCount({ candidate }) {
+			const canidateVotesCount = this.votes.filter(vote => vote.candidate === candidate).length
+			const votesTotalCount = this.votes.length
+			return ((canidateVotesCount / votesTotalCount) * 100).toFixed(2)
+		},
+	},
 }
 </script>
 
@@ -33,6 +40,19 @@ export default {
 				{{ candidate }}
 			</v-btn>
 		</div>
+		<v-layout>
+			<v-card
+			v-for="candidate in CANIDATES"
+			:key="candidate"
+			>
+				<v-card-title>
+					{{ candidate }}
+				</v-card-title>
+				<v-card-text>
+					{{ percentageOfVoteCount({ candidate }) }}%
+				</v-card-text>
+			</v-card>
+		</v-layout>
 		<v-data-table
 		:headers="[
 			{
