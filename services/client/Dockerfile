@@ -1,6 +1,9 @@
 FROM node:13-alpine
 
-RUN apk update
+RUN apk add --update-cache \
+	g++ \
+	make \
+	python
 
 WORKDIR /app
 
