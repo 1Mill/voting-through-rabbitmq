@@ -11,7 +11,8 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 ENV \
-	NODE_ENV=production\
+	HOST=0.0.0.0 \
+	NODE_ENV=production \
 	PORT=8080
 
 EXPOSE ${PORT}
